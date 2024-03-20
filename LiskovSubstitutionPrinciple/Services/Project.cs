@@ -3,10 +3,12 @@
     internal class Project
     {
        private List<Document> documents;
+       private List<WritableDocument> writableDocuments;
 
         public Project()
         {
             documents = new List<Document>();
+            writableDocuments = new List<WritableDocument>();
         }
 
         public void OpenAll()
@@ -18,19 +20,20 @@
         }
         public void SaveAll()
         {
-           foreach(var document in documents)
+           foreach(var document in writableDocuments)
             {
-                if(document is not ReadOnlyDocument)
-                {
-                    document.Save();
-                }
-               
+              document.Save();
             }
         }
 
         public void AddDocument(Document document)
         {
+           this.documents.Add(document);       
+        }
+        public void AddDocument(WritableDocument document)
+        {
             this.documents.Add(document);
         }
+
     }
 }

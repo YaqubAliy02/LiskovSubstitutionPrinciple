@@ -9,12 +9,15 @@ namespace LiskovSubstitutionPrinciple
             /*  ReadOnlyDocument readOnlyDocument = new ReadOnlyDocument("Hello", "text.txt");
               readOnlyDocument.Save();
               readOnlyDocument.Open();*/
-             string FILEPATH = "../../../Assets/read-only.txt";
+             /*string FILEPATH1 = "../../../Assets/read-only.txt";
+            string FILEPATH2 = "../../../Assets/simple.txt";*/
+            Document document = new Document("Document","read-only.txt");
+            WritableDocument writableDocument  = new WritableDocument("WritableDocument", "simple.txt");
+            Project project = new Project();
+            project.AddDocument(document);
+            project.AddDocument(writableDocument);
+            project.SaveAll();
 
-
-            File.Create(FILEPATH);
-            FileInfo fileInfo = new FileInfo(FILEPATH);
-            fileInfo.IsReadOnly = true;
         }
     }
 }
