@@ -14,6 +14,8 @@ namespace LiskovSubstitutionPrinciple
             Document document = new Document("Document","read-only.txt");
             WritableDocument writableDocument  = new WritableDocument("WritableDocument", "simple.txt");
             Project project = new Project();
+            // WE can call any class (Document or WritableDocument) it will be okey because we did not changed entirely WritableDocument just extended like adding "Save method"
+            // but in first commit we created ReadOnlyDocument class if we call this class instead of Document the project will be give exception and program break.
             project.AddDocument(document);
             project.AddDocument(writableDocument);
             project.SaveAll();
