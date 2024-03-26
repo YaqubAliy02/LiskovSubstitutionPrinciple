@@ -60,7 +60,7 @@ program that violates these rules.
 * `A subclass shouldn’t weaken post-conditions. `
 
 * ` Invariants of a superclass must be preserved. `
-* ` Asubclass shouldn’t change values of private fields of the
+* ` A subclass shouldn’t change values of private fields of the
  superclass`
 
 # Example
@@ -82,4 +82,5 @@ You can solve the problem by redesigning the class hierar
 chy: a subclass should extend the behavior of a superclass,
  therefore the read-only document becomes the base class of
  the hierarchy. The writable document is now a subclass which
- extends the base class and adds the saving behavior
+ extends the base class and adds the saving behavior.
+
